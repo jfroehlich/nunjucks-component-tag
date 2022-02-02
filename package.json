@@ -1,5 +1,5 @@
 {
-  "name": "nunjucks-component-blocks",
+  "name": "nunjucks-component-tag",
   "version": "1.0.0",
   "description": " A nunjucks extension to render fractal style blocks in 11ty and include them by using their handle. ",
   "main": "src/index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jfroehlich/nunjucks-component-blocks.git"
+    "url": "git+https://github.com/jfroehlich/nunjucks-component-tag.git"
   },
   "author": "Johannes Fröhlich",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/jfroehlich/nunjucks-component-blocks/issues"
+    "url": "https://github.com/jfroehlich/nunjucks-component-tag/issues"
   },
-  "homepage": "https://github.com/jfroehlich/nunjucks-component-blocks#readme",
+  "homepage": "https://github.com/jfroehlich/nunjucks-component-tag#readme",
   "dependencies": {
     "glob": "^7.2.0",
     "yaml": "^1.10.2"
