@@ -44,9 +44,9 @@ env.addExtension("component", new ComponentTag());
 // Prepare a base context which is handet to all templates
 const baseContext = {
   components: ComponentTag.findComponents({
-  		componentDir: "./assets/", 
-			templateExtensions: "njk",
-			ignore: ["layouts/**/*"]
+  	componentDir: "./assets/", 
+	templateExtensions: "njk",
+	ignore: ["layouts/**/*"]
   });
 };
 const result = nunjucks.render("foo.html", baseContext);
