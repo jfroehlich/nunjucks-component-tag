@@ -28,12 +28,48 @@ Usage
 After installation get the ComponentTag with e.g `require` and register it with
 nunjucks.
 
-For plain JavaScript e.g. in express it would work like this:
+### Plain JavaScript
+
+When you do your custom nunjucks rendering somewhere on a server e.g. in an 
+express app you could do somthing like this:
 
 ```JavaScript
 const nunjucks = require("nunjucks");
-var ComponentTag = require("nunjucks-component-tag");
+const ComponentTag = require("nunjucks-component-tag");
 
-var env = new nunjucks.Environment();
+// Register the tag with the nunjucks environment
+const env = new nunjucks.Environment();
 env.addExtension("component", new ComponentTag());
+
+// Prepare a base context which is handet to all templates
+const baseContext = {
+  components: ComponentTag.findComponents({
+  		componentDir: "./assets/", 
+			templateExtensions: "njk",
+			ignore: ["layouts/**/*"]
+  });
+};
+const result = nunjucks.render("foo.html", baseContext);
 ```
+
+For a particular page you could refetch the components or you cache them
+and expand the context to the pages data:
+
+```JavaScript
+// ...
+
+const pageContext = Object.assign({}, baseContext, {
+  name: "Bob"
+});
+const result = nunjucks.render("foo.html", pageContext);
+```
+
+Inside the template you can use the tag like this:
+
+```JavaScript
+{% component '@text', {classes: "schnick", text: "Hello " + name} %}
+```
+
+The component is automatically retrieved from `./assets/` and used as
+a nunjucks template. The given context is deep merged with the context from
+the components config file.
