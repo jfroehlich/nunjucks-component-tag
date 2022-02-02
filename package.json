@@ -1,0 +1,23 @@
+{
+  "name": "nunjucks-component-blocks",
+  "version": "1.0.0",
+  "description": " A nunjucks extension to render fractal style blocks in 11ty and include them by using their handle. ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfroehlich/nunjucks-component-blocks.git"
+  },
+  "author": "Johannes Fröhlich",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jfroehlich/nunjucks-component-blocks/issues"
+  },
+  "homepage": "https://github.com/jfroehlich/nunjucks-component-blocks#readme",
+  "dependencies": {
+    "glob": "^7.2.0",
+    "yaml": "^1.10.2"
+  }
+}
